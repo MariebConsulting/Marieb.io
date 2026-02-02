@@ -42,7 +42,7 @@ const Button: React.FC<ButtonProps> = ({
   };
 
   return (
-     <button className={`${base} ${variants[variant]} ${sizes[size]} ${className}`} {...props}>
+    <button className={`${base} ${variants[variant]} ${sizes[size]} ${className}`} {...props}>
       {children}
     </button>
   );
@@ -509,22 +509,6 @@ const HeroCursor: React.FC = () => (
   </span>
 );
 
-/* ===================== POOLPRO BOT CHAT ===================== */
-const PoolProEmbed: React.FC = () => (
-  <section id="poolpro" className="py-10">
-    <Card>
-      <CardContent>
-
-        <iframe
-          title="PoolPro.chat"
-          src="https://poolpro.chat"
-          className="w-full border border-slate-200 rounded-xl bg-white h-[70vh] sm:h-[60vh] lg:h-[520px]"
-        />
-      </CardContent>
-    </Card>
-  </section>
-);
-
 /* ===================== ENGAGE TERMINAL HELPERS ===================== */
 function validateEmail(v: string) {
   return /.+@.+\..+/.test(v);
@@ -842,108 +826,92 @@ export default function MariebSiteLight() {
 
       {/* Main */}
       <div className="min-h-screen bg-slate-50 text-slate-800 selection:bg-sky-200 selection:text-slate-900">
-       
-	{/* Hero + PoolPro + Highlights (mobile-first) */}
-<div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-  {/* HERO */}
-  <div className="lg:col-span-12 px-6 py-12 md:px-12 md:py-16 lg:py-20">
-    <h1
-      className="text-4xl md:text-6xl font-bold mb-6 md:mb-8 leading-tight text-slate-900"
-      data-testid="hero-title"
-    >
-      Where Industry Expertise Meets Modern Problem-Solving
-      <HeroCursor />
-    </h1>
-
-    <p className="text-base md:text-lg text-slate-700 mb-8 md:mb-12 max-w-2xl">
-      Marieb specializes in removing operational bottlenecks by pairing emerging AI with deep,
-      practical industry experience from the factory floor and up. We work directly with each
-      client to design custom workflows that improve accuracy, speed, and decision-making—built
-      around real factory, job-site, and office conditions, not theoretical models.
-    </p>
-
-    <div className="flex flex-col sm:flex-row gap-3">
-      <a href="#solutions">
-        <Button variant="primary" size="lg" className="w-full sm:w-auto">
-          Discover →
-        </Button>
-      </a>
-      <a href="#engage">
-        <Button variant="outline" size="lg" className="w-full sm:w-auto">
-          Engage
-        </Button>
-      </a>
-    </div>
-  </div>
-
-  {/* POOLPRO (full width, sits under hero on ALL screen sizes) */}
-  <div className="lg:col-span-12 px-6 md:px-12">
-    <div className="max-w-5xl mx-auto">
-      <PoolProEmbed />
-    </div>
-  </div>
-
-  {/* HIGHLIGHTS */}
-  <aside className="lg:col-span-12 px-6 pb-12 md:px-12 md:pb-16 lg:pb-20">
-    <div className="max-w-5xl mx-auto">
-      <h2 className="text-lg md:text-xl font-semibold mb-6 md:mb-8 text-slate-900">
-        Recent Highlights
-      </h2>
-
-      <div className="space-y-4 md:space-y-6">
-        {[
-          {
-            t: 'PoolPro.chat Live',
-            d: "An interactive AI assistant designed to answer questions about services, companies, and real-world problem solving—guided by Daniel's field experience and delivered through his AI counterpart, Steven Falken.",
-            href: 'https://poolpro.chat',
-          },
-          {
-            t: '2026 Hotel Brand Standards Update',
-            d: 'Ongoing consultations with major hotel brands—most recently Marriott—working alongside developer and pool builder to interpret, align, and implement evolving brand and compliance standards.',
-          },
-          {
-            t: 'Independent Post-Storm Damage Assessments',
-            d: 'We provide independent post-storm damage assessments for swimming pools and aquatic structures to support insurance carriers, TPAs, and adjusting firms. Our work focuses on documentation, causation indicators, and risk classification, not repair generation.',
-          },
-        ].map(({ t, d, href }) => {
-          const card = (
-            <Card className="h-full">
-              <CardContent>
-                <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-slate-300 rounded-full mt-2" />
-                  <div>
-                    <h4 className="font-semibold text-slate-900 mb-1 text-sm md:text-base">
-                      {t}
-                    </h4>
-                    <p className="text-xs md:text-sm text-slate-700">{d}</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          );
-
-          return href ? (
-            <a
-              key={t}
-              href={href}
-              target="_blank"
-              rel="noreferrer"
-              className="block rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500"
+        {/* Hero + Highlights */}
+        <div className="flex flex-col lg:flex-row">
+          <div className="flex-1 px-6 py-12 md:px-12 md:py-16 lg:py-20">
+            <h1
+              className="text-4xl md:text-6xl font-bold mb-6 md:mb-8 leading-tight text-slate-900"
+              data-testid="hero-title"
             >
-              {card}
-            </a>
-          ) : (
-            <React.Fragment key={t}>{card}</React.Fragment>
-          );
-        })}
-      </div>
-    </div>
-  </aside>
-</div>
+              Where Industry Expertise Meets Modern Problem-Solving
+              <HeroCursor />
+            </h1>
 
+            <p className="text-base md:text-lg text-slate-700 mb-8 md:mb-12 max-w-2xl">
+              Marieb specializes in removing operational bottlenecks by pairing emerging AI with deep,
+              practical industry experience from the factory floor and up. We work directly with each
+              client to design custom workflows that improve accuracy, speed, and decision-making—built
+              around real factory, job-site, and office conditions, not theoretical models.
+            </p>
 
+            <div className="flex flex-col sm:flex-row gap-3 mb-10">
+              <a href="#solutions">
+                <Button variant="primary" size="lg" className="w-full sm:w-auto">
+                  Discover →
+                </Button>
+              </a>
+              <a href="#engage">
+                <Button variant="outline" size="lg" className="w-full sm:w-auto">
+                  Engage
+                </Button>
+              </a>
+            </div>
+          </div>
 
+          <aside className="w-full lg:w-[26rem] px-6 py-12 md:px-8 md:py-16 lg:py-20 border-t lg:border-t-0 lg:border-l border-slate-200 bg-white/60">
+            <h2 className="text-lg md:text-xl font-semibold mb-6 md:mb-8 text-slate-900">
+              Recent Highlights
+            </h2>
 
+            <div className="space-y-4 md:space-y-6">
+              {[
+                {
+                  t: 'PoolPro.chat Live',
+                  d: "An interactive AI assistant designed to answer questions about services, companies, and real-world problem solving-guided by Daniel's field experience and delivered through his AI counterpart, Steven Falken",
+                  href: 'https://poolpro.chat',
+                },
+                {
+                  t: '2026 Hotel Brand Standards Update',
+                  d: 'Ongoing consultations with major hotel brands-most recently Marriott-working alongside developer and pool builder to interpret, align, and implement evolving 2026 brand and compliance standards',
+                },
+                {
+                  t: 'Renovation Reports & In-Field Support',
+                  d: 'Detailed, project-specific renovation reports covering raw materials, surface options, system design, and execution methodology-paired with optional in-field support to ensure field implementation.',
+                },
+              ].map(({ t, d, href }) => {
+                const card = (
+                  <Card className="h-full">
+                    <CardContent>
+                      <div className="flex items-start gap-3">
+                        <div className="w-2 h-2 bg-slate-300 rounded-full mt-2" />
+                        <div>
+                          <h4 className="font-semibold text-slate-900 mb-1 text-sm md:text-base">
+                            {t}
+                          </h4>
+                          <p className="text-xs md:text-sm text-slate-700">{d}</p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                );
+
+                return href ? (
+                  <a
+                    key={t}
+                    href={href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="block rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500"
+                  >
+                    {card}
+                  </a>
+                ) : (
+                  <React.Fragment key={t}>{card}</React.Fragment>
+                );
+              })}
+            </div>
+          </aside>
+        </div>
 
         {/* Workflow */}
         <section id="workflow" className="py-14 md:py-20 px-6">
@@ -1009,7 +977,7 @@ export default function MariebSiteLight() {
             <div>
               <h3 className="text-xl font-semibold text-sky-700 mb-3">Industry Depth First —</h3>
               <p className="text-slate-700 leading-relaxed">
-                Marieb was built on experience, not theory. With decades of hands-on
+                Marieb Consulting was built on experience, not theory. With decades of hands-on
                 experience across manufacturing floors, construction sites, and coatings facilities,
                 our directions and systems are shaped by the realities of the situation.
               </p>
@@ -1064,7 +1032,7 @@ export default function MariebSiteLight() {
 
         {/* Footer */}
         <footer className="py-8 md:py-10 px-4 text-center text-xs md:text-sm text-slate-600 border-t border-slate-200 bg-white/60">
-          <p>© 2025 Marieb.io — Domain-Deep Intelligence. Open Ecosystem.</p>
+          <p>© 2025 Marieb — Domain-Deep Intelligence. Open Ecosystem.</p>
         </footer>
       </div>
     </>
