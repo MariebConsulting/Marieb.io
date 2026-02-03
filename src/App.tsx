@@ -1,5 +1,5 @@
-// src/App.tsx
-// Marieb Site – Light Theme Full Integrated (Unified)
+﻿// src/App.tsx
+// Marieb Site ΓÇô Light Theme Full Integrated (Unified)
 // One-page site with: Hero (terminal cursor), Recent Highlights,
 // Workflow Studios, Solutions, Behind the Flow, Pricing, and the Engage Terminal
 // wired to Formspree via VITE_FORM_ENDPOINT.
@@ -176,17 +176,17 @@ const SOLUTIONS = [
     detail:
       'We connect PLCs, sensors, and line software with AI agents that detect drift, reduce downtime, and tune parameters. Where beneficial, we retrofit machines with vision or edge compute for closed-loop improvements.',
     pillar: 'Construction & Engineering',
-    icon: '🏭',
+    icon: '≡ƒÅ¡',
   },
   {
     id: 'marketing',
     title: 'Marketing & Creative',
     summary:
-      'Generate and optimize blogs, ads, landing pages, email, and SEO in your brand’s voice.',
+      'Generate and optimize blogs, ads, landing pages, email, and SEO in your brandΓÇÖs voice.',
     detail:
-      'AI keeps campaigns consistent and on-message. With a light PoolBrain.ai integration, content learns from past project results, seasonality, and product language—so every touchpoint feels authentic and current.',
+      'AI keeps campaigns consistent and on-message. With a light PoolBrain.ai integration, content learns from past project results, seasonality, and product languageΓÇöso every touchpoint feels authentic and current.',
     pillar: 'Customer & Market Insights',
-    icon: '📈',
+    icon: '≡ƒôê',
   },
   {
     id: 'sales',
@@ -196,7 +196,7 @@ const SOLUTIONS = [
     detail:
       'Turn your pipeline into a living playbook. Emails and decks adapt to lead type and season, while PoolBrain.ai quietly surfaces patterns from wins, demos, and quotes.',
     pillar: 'Market & Economics',
-    icon: '🤝',
+    icon: '≡ƒñ¥',
   },
   {
     id: 'support',
@@ -206,7 +206,7 @@ const SOLUTIONS = [
     detail:
       'Summarize tickets, spot recurring issues, and draft proactive guidance. PoolBrain.ai logs insights so service and warranty teams get ahead of problems.',
     pillar: 'Service & Maintenance',
-    icon: '🛟',
+    icon: '≡ƒ¢ƒ',
   },
   {
     id: 'product',
@@ -216,7 +216,7 @@ const SOLUTIONS = [
     detail:
       'Close the loop between field and factory. PoolBrain.ai correlates substrate, climate, and install feedback for better product decisions.',
     pillar: 'Construction & Engineering',
-    icon: '🧩',
+    icon: '≡ƒº⌐',
   },
   {
     id: 'hr',
@@ -226,7 +226,7 @@ const SOLUTIONS = [
     detail:
       'Standardize hiring while preserving your voice. PoolBrain.ai helps align training and policy docs with how your teams actually operate.',
     pillar: 'Workforce & Training',
-    icon: '🧑‍💼',
+    icon: '≡ƒºæΓÇì≡ƒÆ╝',
   },
   {
     id: 'ops',
@@ -235,7 +235,7 @@ const SOLUTIONS = [
     detail:
       'From excavation to fill day, status stays visible without extra admin. PoolBrain.ai adds historical context so schedules and budgets are evidence-based.',
     pillar: 'Construction & Logistics',
-    icon: '🗂️',
+    icon: '≡ƒùé∩╕Å',
   },
   {
     id: 'analytics',
@@ -244,16 +244,16 @@ const SOLUTIONS = [
     detail:
       'No data scientist required. PoolBrain.ai unifies sources (sales, weather, material usage) so every metric is traceable and decision-ready.',
     pillar: 'Market & Economics',
-    icon: '📊',
+    icon: '≡ƒôè',
   },
   {
     id: 'exec',
     title: 'Executive Communications',
     summary: 'Investor updates, press releases, and strategy briefs that stay precise.',
     detail:
-      'Leadership messaging remains consistent and verifiable—grounded in current data flowing through PoolBrain.ai.',
+      'Leadership messaging remains consistent and verifiableΓÇögrounded in current data flowing through PoolBrain.ai.',
     pillar: 'Regulatory & Strategy',
-    icon: '🏛️',
+    icon: '≡ƒÅ¢∩╕Å',
   },
   {
     id: 'learning',
@@ -262,7 +262,7 @@ const SOLUTIONS = [
     detail:
       'Training reflects real installs. PoolBrain.ai enriches modules with examples from your successful jobs and verified outcomes.',
     pillar: 'Knowledge & Training',
-    icon: '🎓',
+    icon: '≡ƒÄô',
   },
 ];
 
@@ -312,8 +312,8 @@ const SolutionsSection: React.FC = () => {
           Native AI for Swimming Pool and Outdoor Living Businesses
         </h2>
         <p className="text-slate-700 max-w-2xl mx-auto">
-          We integrate an open ecosystem—Jasper, OpenAI, Gemini, Claude—on top of your systems. A
-          light PoolBrain.ai layer quietly keeps teams aligned with what’s working in the factory,
+          We integrate an open ecosystemΓÇöJasper, OpenAI, Gemini, ClaudeΓÇöon top of your systems. A
+          light PoolBrain.ai layer quietly keeps teams aligned with whatΓÇÖs working in the factory,
           field, and office.
         </p>
       </header>
@@ -347,7 +347,7 @@ const SolutionsSection: React.FC = () => {
                       }`}
                       aria-hidden="true"
                     >
-                      ▾
+                      Γû╛
                     </span>
                   </div>
                   <span className="inline-block text-xs text-slate-700 bg-slate-50 border border-slate-200 rounded-full px-2 py-0.5 mt-1">
@@ -374,7 +374,7 @@ const SolutionsSection: React.FC = () => {
       </ul>
 
       <footer className="max-w-6xl mx-auto mt-8 flex flex-wrap items-center justify-start gap-2 reveal opacity-0 translate-y-3 transition">
-        {['Open Ecosystem', 'In-Field AI™', 'SignalFlow™', 'PoolBrain.ai (light)'].map((chip) => (
+        {['Open Ecosystem', 'In-Field AIΓäó', 'SignalFlowΓäó', 'PoolBrain.ai (light)'].map((chip) => (
           <span
             key={chip}
             className="text-xs text-slate-700 bg-white/70 border border-slate-200 rounded-full px-3 py-1"
@@ -398,7 +398,7 @@ const PricingSection: React.FC = () => {
   const tiers = [
     {
       name: 'Fixed-Scope Project',
-      tag: 'Discovery → Build → Deploy',
+      tag: 'Discovery ΓåÆ Build ΓåÆ Deploy',
       blurb:
         'Great for a well-defined use case: roadmap, pilot, or integration with clear outcomes.',
       highlights: [
@@ -420,7 +420,7 @@ const PricingSection: React.FC = () => {
     },
     {
       name: 'Starter Workshop',
-      tag: '2–3 week sprint',
+      tag: '2ΓÇô3 week sprint',
       blurb:
         'Hands-on working sessions to map high-ROI opportunities and an execution plan your team can run.',
       highlights: ['Use-case prioritization', 'Data & workflow audit', 'Pilot plan + timeline'],
@@ -443,7 +443,7 @@ const PricingSection: React.FC = () => {
           Engagements that align with outcomes
         </h2>
         <p className="text-slate-700 mt-3">
-          We price against value delivered—not hours spent. Choose a structure, then we tailor
+          We price against value deliveredΓÇönot hours spent. Choose a structure, then we tailor
           scope and KPIs to your goals.
         </p>
       </header>
@@ -469,7 +469,7 @@ const PricingSection: React.FC = () => {
               <ul className="mt-4 space-y-2 text-sm text-slate-700">
                 {t.highlights.map((h) => (
                   <li key={h} className="flex items-start gap-2">
-                    <span className="text-sky-700">✔</span>
+                    <span className="text-sky-700">Γ£ö</span>
                     <span>{h}</span>
                   </li>
                 ))}
@@ -518,10 +518,10 @@ function validateEmail(v: string) {
 const RotatingDiagnostics: React.FC = () => {
   const [index, setIndex] = React.useState(0);
   const phrases = [
-    'SIGNALFLOW: COHERENT [NOISE→SIGNAL RATIO OPTIMAL]',
+    'SIGNALFLOW: COHERENT [NOISEΓåÆSIGNAL RATIO OPTIMAL]',
     'DOMAIN LINK: VERIFIED [INTEL STREAM ACTIVE]',
     'TELEMETRY FEED: GREEN [SIGFLOW STABLE]',
-    'FIELD NODE: SYNCED [IN-FIELD AI™ OPERATIONAL]',
+    'FIELD NODE: SYNCED [IN-FIELD AIΓäó OPERATIONAL]',
     'LINK STATUS: NOMINAL [OPEN ECOSYSTEM MODE]',
   ];
 
@@ -611,7 +611,7 @@ return (
     </h3>
 
     <div className="max-w-3xl mx-auto">
-      {/* Clean “terminal” panel that fits the light theme */}
+      {/* Clean ΓÇ£terminalΓÇ¥ panel that fits the light theme */}
       <Card className="bg-white border border-slate-200 shadow-sm">
         <CardContent>
           {/* Terminal Header */}
@@ -630,7 +630,7 @@ return (
 
             {/* Noise background (subtle) */}
             <div className="pointer-events-none absolute inset-0 opacity-15 mix-blend-multiply text-[0.55rem] leading-none text-slate-500 whitespace-nowrap overflow-hidden">
-              <div className="animate-[noiseScroll_16s_linear_infinite]">{'01∷ΔΛ⋄≋  '.repeat(40)}</div>
+              <div className="animate-[noiseScroll_16s_linear_infinite]">{'01Γê╖╬ö╬¢ΓïäΓëï  '.repeat(40)}</div>
             </div>
 
             {/* Rotating diagnostics text */}
@@ -672,20 +672,20 @@ return (
                   value={data.friction}
                   onChange={(e) => setData({ ...data, friction: e.target.value })}
                   className="bg-transparent outline-none border-b border-slate-300 focus:border-slate-600 text-slate-900 placeholder:text-slate-400 w-full min-h-[120px] py-1"
-                  placeholder="Write as much as you want — what's causing friction, breaking, or needs growth?"
+                  placeholder="Write as much as you want ΓÇö what's causing friction, breaking, or needs growth?"
                 />
               </label>
 
               <div className="pt-2 flex items-center justify-end">
                 <Button type="submit" disabled={submitting}>
-                  {submitting ? 'Submitting…' : 'Submit'}
+                  {submitting ? 'SubmittingΓÇª' : 'Submit'}
                 </Button>
               </div>
             </form>
           ) : (
             <div className="text-slate-800">
               <div className="text-slate-700 font-mono mb-2">&gt; Submission received</div>
-              <p className="text-slate-600">Thanks, {data.name}. We’ll reach out via email.</p>
+              <p className="text-slate-600">Thanks, {data.name}. WeΓÇÖll reach out via email.</p>
               <div className="mt-6 flex items-center gap-2">
                 <Button
                   variant="terminal"
@@ -795,7 +795,7 @@ export default function MariebSiteLight() {
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
-            {mobileMenuOpen ? '✕' : '☰'}
+            {mobileMenuOpen ? 'Γ£ò' : 'Γÿ░'}
           </button>
         </div>
 
@@ -840,14 +840,14 @@ export default function MariebSiteLight() {
             <p className="text-base md:text-lg text-slate-700 mb-8 md:mb-12 max-w-2xl">
               Marieb specializes in removing operational bottlenecks by pairing emerging AI with deep,
               practical industry experience from the factory floor and up. We work directly with each
-              client to design custom workflows that improve accuracy, speed, and decision-making—built
+              client to design custom workflows that improve accuracy, speed, and decision-makingΓÇöbuilt
               around real factory, job-site, and office conditions, not theoretical models.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mb-10">
               <a href="#solutions">
                 <Button variant="primary" size="lg" className="w-full sm:w-auto">
-                  Discover →
+                  Discover ΓåÆ
                 </Button>
               </a>
               <a href="#engage">
@@ -923,22 +923,22 @@ export default function MariebSiteLight() {
             {[
               {
                 title: 'PoolBrain.ai',
-                desc: 'Our domain intelligence layer that learns from past installs, climate, materials, and service logs—so every decision uses field truth.',
+                desc: 'Our domain intelligence layer that learns from past installs, climate, materials, and service logsΓÇöso every decision uses field truth.',
                 icon: 'PoolBrain',
               },
               {
-                title: 'SignalFlow™',
+                title: 'SignalFlowΓäó',
                 desc: 'Automation rails that connect CRMs, forms, and jobsite telemetry to keep ops synchronized.',
                 icon: 'SignalFlow',
               },
               {
-                title: 'In-Field AI™',
-                desc: 'Rugged edge kits for diagnostics, QA photos, and condition checks—feeding real-world signals back to your systems.',
+                title: 'In-Field AIΓäó',
+                desc: 'Rugged edge kits for diagnostics, QA photos, and condition checksΓÇöfeeding real-world signals back to your systems.',
                 icon: 'InField',
               },
               {
                 title: 'Domain-Specific RAG Experts',
-                desc: 'Retrievers tuned to pool codes, coatings, chemistry, and equipment—fast answers with citations.',
+                desc: 'Retrievers tuned to pool codes, coatings, chemistry, and equipmentΓÇöfast answers with citations.',
                 icon: 'RAG',
               },
             ].map((studio) => (
@@ -975,7 +975,7 @@ export default function MariebSiteLight() {
 
           <div className="max-w-5xl mx-auto mt-10 grid grid-cols-1 md:grid-cols-2 gap-10">
             <div>
-              <h3 className="text-xl font-semibold text-sky-700 mb-3">Industry Depth First —</h3>
+              <h3 className="text-xl font-semibold text-sky-700 mb-3">Industry Depth First ΓÇö</h3>
               <p className="text-slate-700 leading-relaxed">
                 Marieb Consulting was built on experience, not theory. With decades of hands-on
                 experience across manufacturing floors, construction sites, and coatings facilities,
@@ -988,24 +988,24 @@ export default function MariebSiteLight() {
               </p>
               <p className="text-slate-700 leading-relaxed mt-3">
                 Every workflow we design is pragmatic, measurable, and grounded in the cadence of real
-                operations—not hypothetical dashboards.
+                operationsΓÇönot hypothetical dashboards.
               </p>
             </div>
 
             <div>
               <h3 className="text-xl font-semibold text-sky-700 mb-3">
-                Engineering at the Frontier — Built by Hands That Understand the Field
+                Engineering at the Frontier ΓÇö Built by Hands That Understand the Field
               </h3>
               <p className="text-slate-700 leading-relaxed">
-                Led by founder Dan Epple—educated across dual bachelor’s programs and continually
+                Led by founder Dan EppleΓÇöeducated across dual bachelorΓÇÖs programs and continually
                 advancing graduate-level studies in emerging AI technology and organizational systems,
                 including a certification in Generative AI for Business from the University of
-                Michigan’s College of Engineering — Marieb develops In-Field AI™ and SignalFlow™
+                MichiganΓÇÖs College of Engineering ΓÇö Marieb develops In-Field AIΓäó and SignalFlowΓäó
                 systems that merge edge computing, sensor data, and human reinforcement into adaptive
                 operational information and solutions.
               </p>
               <p className="text-slate-700 leading-relaxed mt-3">
-                This leadership blends technical fluency with <em>well-lived</em> industry experience—turning
+                This leadership blends technical fluency with <em>well-lived</em> industry experienceΓÇöturning
                 data and technology workflows into solutions that perform reliably in unpredictable
                 environments. Our technology is built to handle real-world conditions because it was
                 conceived in them.
@@ -1019,7 +1019,7 @@ export default function MariebSiteLight() {
               innovation into secure, stable, and scalable workflows that give our clients a measurable edge.
             </p>
             <p className="text-slate-600 italic mt-3">
-              We don’t chase trends—we operationalize what’s next before others see it coming, making our
+              We donΓÇÖt chase trendsΓÇöwe operationalize whatΓÇÖs next before others see it coming, making our
               style harder to follow and impossible to replicate.
             </p>
           </div>
@@ -1032,7 +1032,7 @@ export default function MariebSiteLight() {
 
         {/* Footer */}
         <footer className="py-8 md:py-10 px-4 text-center text-xs md:text-sm text-slate-600 border-t border-slate-200 bg-white/60">
-          <p>© 2025 Marieb — Domain-Deep Intelligence. Open Ecosystem.</p>
+          <p>┬⌐ 2025 Marieb ΓÇö Domain-Deep Intelligence. Open Ecosystem.</p>
         </footer>
       </div>
     </>
