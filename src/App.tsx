@@ -510,20 +510,7 @@ const HeroCursor: React.FC = () => (
 );
 
 /* ===================== POOLPRO BOT CHAT ===================== */
-const PoolProEmbed: React.FC = () => (
-  <section id="poolpro" className="py-10">
-    <Card>
-      <CardContent>
-
-        <iframe
-          title="PoolPro.chat"
-          src="https://poolpro.chat"
-          className="w-full border border-slate-200 rounded-xl bg-white h-[70vh] sm:h-[60vh] lg:h-[520px]"
-        />
-      </CardContent>
-    </Card>
-  </section>
-);
+/* POOLPRO embed removed */
 
 /* ===================== ENGAGE TERMINAL HELPERS ===================== */
 function validateEmail(v: string) {
@@ -877,11 +864,7 @@ export default function MariebSiteLight() {
   </div>
 
   {/* POOLPRO (full width, sits under hero on ALL screen sizes) */}
-  <div className="lg:col-span-12 px-6 md:px-12">
-    <div className="max-w-5xl mx-auto">
-      <PoolProEmbed />
-    </div>
-  </div>
+  {/* PoolPro embed removed */}
 
   {/* HIGHLIGHTS */}
   <aside className="lg:col-span-12 px-6 pb-12 md:px-12 md:pb-16 lg:pb-20">
