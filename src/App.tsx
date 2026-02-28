@@ -5,6 +5,7 @@
 // wired to Formspree via VITE_FORM_ENDPOINT.
 
 import React, { useEffect, useRef, useState } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 /* ===================== CONFIG ===================== */
 // Use env if present, otherwise fall back to your Formspree endpoint
@@ -163,6 +164,170 @@ const WorkflowIcon: React.FC<{ type: string }> = ({ type }) => {
     >
       <path d="M4 19h16M4 5h16M7 5v14M17 5v14" />
     </svg>
+  );
+};
+
+/* ===================== REAL USE CASES (LINKED IMAGE TILES) ===================== */
+type UseCaseTile = {
+  id: string;
+  kicker: string;
+  title: string;
+  desc: string;
+  image: string; // place in /public/images/*
+  href: string;  // external (https://...) OR internal route (/use-cases/...)
+};
+
+const USE_CASE_TILES: UseCaseTile[] = [
+  {
+    id: 'lineguide',
+    kicker: 'Onboarding Intelligence',
+    title: 'LineGuide™ Dashboard',
+    desc: 'SOP-grounded answers + role-based quick start.',
+    image: '/images/lineguide.jpg',
+    href: '/use-cases/lineguide',
+  },
+  {
+    id: 'commercial',
+    kicker: 'Commercial Expansion',
+    title: 'Commercial Integration Blueprint',
+    desc: 'Residential techniques → commercial execution sequencing + oversight.',
+    image: '/images/commercial.jpg',
+    href: '/use-cases/commercial',
+  },
+  {
+  id: 'managed-software',
+  kicker: 'Managed Service Software',
+  title: 'Your Company’s Service Platform',
+  desc: 'A fully managed service operations platform — routes, stops, anomalies, reporting — built specifically for your company and operated by us.',
+  image: '/images/poolpro-route-ui.jpg',
+  href: '/use-cases/managed-service-software',
+  },
+  {
+    id: 'sales-sherpa',
+    kicker: 'Instant Answers for Products & Services',
+    title: 'CoverAgent Smart Owners Manual',
+    desc: 'Example of company intelligence usable at every level, anytime with a service call deflection engine.',
+    image: '/images/coveragent.jpg',
+    href: 'https://coveragent.poolpro.chat', // example external
+  },
+  {
+    id: 'standards',
+    kicker: 'Regulatory Strategy',
+    title: 'Standards + Legislation Drafting',
+    desc: 'Category creation, code language, and adoption pathways.',
+    image: '/images/regulatory.jpg',
+    href: '/use-cases/standards',
+  },
+  {
+    id: 'partner-deals',
+    kicker: 'Partner Deal Structuring',
+    title: 'Producer × Manufacturer × Builder',
+    desc: 'On-camera/off-camera advisory + negotiated execution terms.',
+    image: '/images/partner-deals.jpg',
+    href: 'https://www.imdb.com/title/tt29343542/episodes/?season=3&ref_=tt_eps_sn_3',
+  },
+];
+
+function normalizeHref(href: string) {
+  // HashRouter-friendly internal links
+  if (/^https?:\/\//i.test(href)) return href;
+  if (href.startsWith('#')) return href;
+  if (href.startsWith('/')) return `#${href}`;
+  return href;
+}
+
+const UseCasesSection: React.FC = () => {
+  const ref = useRef<HTMLElement | null>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['start 85%', 'end 15%'],
+  });
+
+  // Whole-grid subtle drift + fade as it enters/leaves the viewport
+  const gridY = useTransform(scrollYProgress, [0, 1], [50, -50]);
+  const gridOpacity = useTransform(scrollYProgress, [0, 0.25], [0, 1]);
+
+  const container = {
+    hidden: {},
+    visible: { transition: { staggerChildren: 0.14 } },
+  };
+
+  const item = {
+    hidden: { opacity: 0, y: 38, scale: 0.97 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: { duration: 0.6, ease: 'easeOut' },
+    },
+  };
+
+  return (
+    <section
+      id="use-cases"
+      ref={ref}
+      className="py-16 md:py-24 px-6 bg-white overflow-hidden"
+      data-testid="use-cases"
+    >
+      <header className="max-w-4xl mx-auto text-center space-y-4">
+        <span className="inline-block text-xs tracking-[0.18em] text-slate-700 border border-slate-200 rounded-full px-3 py-1 bg-white/60">
+          DEMOS PROVIDE PRACTICAL INSIGHT 
+        </span>
+        <h2 className="text-3xl md:text-5xl font-bold text-slate-900">Practical Applications</h2>
+        <p className="text-slate-700 max-w-2xl mx-auto">
+          Six real-world examples - some publishing soon—click any tile to view the full artifact, demo, or deep-dive page. 
+        </p>
+      </header>
+
+      <motion.div
+        style={{ y: gridY, opacity: gridOpacity }}
+        className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5 max-w-6xl mx-auto mt-10"
+        variants={container}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        {USE_CASE_TILES.map((t) => {
+          const out = normalizeHref(t.href);
+          const isExternal = /^https?:\/\//i.test(out);
+
+          return (
+            <motion.a
+              key={t.id}
+              href={out}
+              target={isExternal ? '_blank' : undefined}
+              rel={isExternal ? 'noreferrer' : undefined}
+              variants={item}
+              whileHover={{ scale: 1.03 }}
+              className="group block rounded-xl overflow-hidden border border-slate-200 bg-white shadow-sm hover:shadow-xl hover:shadow-sky-500/20 hover:border-slate-300 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500"
+            >
+              <div className="relative h-[230px] overflow-hidden">
+                <motion.img
+                  src={t.image}
+                  alt={`${t.title} preview`}
+                  loading="lazy"
+                  className="absolute inset-0 w-full h-full object-cover"
+                  whileHover={{ scale: 1.08 }}
+                  transition={{ duration: 0.5 }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-slate-950/20 to-transparent" />
+                <div className="absolute inset-0 p-5 flex flex-col justify-end">
+                  <div className="text-[11px] tracking-[0.14em] uppercase text-white/80">{t.kicker}</div>
+                  <div className="mt-2 text-lg font-semibold text-white">{t.title}</div>
+                  <div className="mt-1 text-sm text-white/85 leading-snug">{t.desc}</div>
+                </div>
+              </div>
+
+              <div className="p-4 flex items-center justify-between">
+                <span className="text-sm text-slate-700">{isExternal ? 'Open' : 'View'} details</span>
+                <span className="text-sky-700 font-medium group-hover:translate-x-0.5 transition">→</span>
+              </div>
+            </motion.a>
+          );
+        })}
+      </motion.div>
+    </section>
   );
 };
 
@@ -509,9 +674,6 @@ const HeroCursor: React.FC = () => (
   </span>
 );
 
-/* ===================== POOLPRO BOT CHAT ===================== */
-/* POOLPRO embed removed */
-
 /* ===================== ENGAGE TERMINAL HELPERS ===================== */
 function validateEmail(v: string) {
   return /.+@.+\..+/.test(v);
@@ -843,10 +1005,7 @@ export default function MariebSiteLight() {
     </h1>
 
     <p className="text-base md:text-lg text-slate-700 mb-8 md:mb-12 max-w-2xl">
-      Marieb specializes in removing operational bottlenecks by pairing emerging AI with deep,
-      practical industry experience from the factory floor and up. We work directly with each
-      client to design custom workflows that improve accuracy, speed, and decision-making—built
-      around real factory, job-site, and office conditions, not theoretical models.
+      Marieb builds AI-powered SaaS platforms and custom applications that eliminate operational bottlenecks—while advancing the swimming pool industry through PoolBrain.ai, builder development, commercial integration strategy, media collaboration, and regulatory guidance.
     </p>
 
     <div className="flex flex-col sm:flex-row gap-3">
@@ -862,9 +1021,6 @@ export default function MariebSiteLight() {
       </a>
     </div>
   </div>
-
-  {/* POOLPRO (full width, sits under hero on ALL screen sizes) */}
-  {/* PoolPro embed removed */}
 
   {/* HIGHLIGHTS */}
   <aside className="lg:col-span-12 px-6 pb-12 md:px-12 md:pb-16 lg:pb-20">
@@ -974,6 +1130,8 @@ export default function MariebSiteLight() {
           </div>
         </section>
 
+        <UseCasesSection />
+
         <SolutionsSection />
 
         {/* Behind the Flow */}
@@ -1047,7 +1205,7 @@ export default function MariebSiteLight() {
 
         {/* Footer */}
         <footer className="py-8 md:py-10 px-4 text-center text-xs md:text-sm text-slate-600 border-t border-slate-200 bg-white/60">
-          <p>© 2025 Marieb.io — Domain-Deep Intelligence. Open Ecosystem.</p>
+          <p>© 2026 Marieb.io — Domain-Deep Intelligence. Open Ecosystem.</p>
         </footer>
       </div>
     </>
