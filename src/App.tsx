@@ -184,7 +184,7 @@ const USE_CASE_TILES: UseCaseTile[] = [
     title: 'LineGuide™ Dashboard',
     desc: 'SOP-grounded answers + role-based quick start.',
     image: '/images/lineguide.jpg',
-    href: '/use-cases/lineguide',
+    href: 'https://lineguide.poolpro.chat', // example external
   },
   {
     id: 'commercial',
@@ -200,7 +200,7 @@ const USE_CASE_TILES: UseCaseTile[] = [
   title: 'Your Company’s Service Platform',
   desc: 'A fully managed service operations platform — routes, stops, anomalies, reporting — built specifically for your company and operated by us.',
   image: '/images/poolpro-route-ui.jpg',
-  href: '/use-cases/managed-service-software',
+  href: 'https://poolpro.chat', // example external
   },
   {
     id: 'sales-sherpa',
@@ -274,9 +274,9 @@ const UseCasesSection: React.FC = () => {
         <span className="inline-block text-xs tracking-[0.18em] text-slate-700 border border-slate-200 rounded-full px-3 py-1 bg-white/60">
           DEMOS PROVIDE PRACTICAL INSIGHT 
         </span>
-        <h2 className="text-3xl md:text-5xl font-bold text-slate-900">Practical Applications</h2>
+        <h2 className="text-3xl md:text-5xl font-bold text-slate-900">Real Use Cases</h2>
         <p className="text-slate-700 max-w-2xl mx-auto">
-          Six real-world examples - some publishing soon—click any tile to view the full artifact, demo, or deep-dive page. 
+          Six operational deployments—click any tile to view the full artifact, demo, or deep-dive page. 
         </p>
       </header>
 
